@@ -200,4 +200,174 @@
             font-weight: 500;
         }
 
-        .skill-
+        .skill-bar-bg {
+            width: 100%;
+            height: 10px;
+            background-color: #f1f5f9;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(to right, var(--accent-blue), var(--accent-pink));
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--primary-blue) 100%);
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            text-decoration: none;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            background: var(--white);
+            color: var(--text-main);
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .contact-btn:hover {
+            background: var(--accent-pink);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        footer {
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            border-top: 1px solid #f1f1f1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .skills-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <div class="profile-placeholder">
+                <img src="https://via.placeholder.com/180/e0f2fe/db2777?text=Sornsawan" alt="Sornsawan Sophapho">
+            </div>
+            <h1>Sornsawan Sophapho</h1>
+            <p class="tagline">Marketing student passionate about brand storytelling</p>
+        </div>
+    </header>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-text">
+                <p>
+                    สวัสดีค่ะ! ดิฉันเป็นนักศึกษาชั้นปีที่ 3 สาขาการจัดการโลจิสติกส์และการคมนาคมขนส่ง 
+                    ถึงแม้พื้นฐานการเรียนจะเน้นไปที่ระบบการจัดการและการขนส่ง แต่ดิฉันมีความหลงใหลอย่างมากในโลกของการตลาดดิจิทัลและการสร้างคุณค่าให้กับแบรนด์ผ่านการเล่าเรื่อง (Brand Storytelling)
+                </p>
+                <p>
+                    ดิฉันเชื่อว่าโลจิสติกส์ไม่ใช่แค่เรื่องการย้ายสินค้า แต่คือการส่งมอบคุณค่าและประสบการณ์ที่ดีที่สุดถึงมือลูกค้า 
+                    ดิฉันพยายามประยุกต์ใช้ความเข้าใจในห่วงโซ่อุปทาน (Supply Chain) เข้ากับกลยุทธ์การตลาด เพื่อสร้างมุมมองใหม่ๆ ที่ตอบโจทย์ธุรกิจในยุคปัจจุบัน
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-img">Project Concept A</div>
+                    <div class="project-info">
+                        <h3>Logistics Content Strategy</h3>
+                        <p>การออกแบบคอนเทนต์เพื่อให้ความรู้ด้านโลจิสติกส์ผ่านการเล่าเรื่องที่เข้าใจง่ายบน Social Media เพื่อสร้าง Brand Awareness</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Project Concept B</div>
+                    <div class="project-info">
+                        <h3>Consumer Insights Analysis</h3>
+                        <p>โปรเจกต์วิเคราะห์พฤติกรรมผู้ซื้อสินค้าออนไลน์ที่มีผลต่อความคาดหวังในระบบการขนส่งสินค้า (Last-mile delivery)</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">Project Concept C</div>
+                    <div class="project-info">
+                        <h3>Brand Identity Design</h3>
+                        <p>การออกแบบอัตลักษณ์แบรนด์ให้กับโมเดลธุรกิจสตาร์ทอัพด้านขนส่งที่เน้นความเป็นมิตรต่อสิ่งแวดล้อม</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Brand Storytelling</span><span>90%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Logistics Management</span><span>85%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Supply Chain Analysis</span><span>80%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Content Marketing</span><span>88%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 88%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Consumer Psychology</span><span>75%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info"><span>Communication</span><span>92%</span></div>
+                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-links">
+                <a href="mailto:sornsawan.s@example.com" class="contact-btn">Email Me</a>
+                <a href="https://linkedin.com/in/sornsawan-sophapho" class="contact-btn" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com/sornsawan" class="contact-btn" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sornsawan Sophapho. Designed with Poppins & Minimalist Spirit.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
