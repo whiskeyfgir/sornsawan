@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sornsawan Sophapho | Portfolio</title>
+    <title>Sornsawan Sophapho | Personal Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-blue: #f0f7ff;
-            --bg-pink: #fff0f5;
+            --primary-blue: #eef7ff;
             --accent-blue: #7fb3d5;
+            --primary-pink: #fff0f6;
             --accent-pink: #f1948a;
-            --text-main: #2c3e50;
-            --text-muted: #5d6d7e;
+            --text-dark: #2c3e50;
+            --text-light: #5d6d7e;
             --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
         * {
@@ -24,13 +25,9 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            color: var(--text-main);
+            color: var(--text-dark);
             line-height: 1.6;
-            background-color: var(--bg-blue);
-        }
-
-        /* Smooth Scroll */
-        html {
+            background-color: var(--primary-blue);
             scroll-behavior: smooth;
         }
 
@@ -42,29 +39,28 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, var(--bg-blue) 0%, var(--bg-pink) 100%);
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-pink) 100%);
             padding: 20px;
         }
 
-        .profile-container {
-            margin-bottom: 30px;
+        .profile-wrapper {
+            margin-bottom: 25px;
         }
 
         .profile-img {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 8px solid var(--white);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 6px solid var(--white);
+            box-shadow: var(--shadow);
         }
 
         .hero h1 {
             font-size: 3rem;
-            font-weight: 600;
             margin-bottom: 10px;
-            color: var(--text-main);
             letter-spacing: -1px;
+            font-weight: 600;
         }
 
         .tagline {
@@ -75,246 +71,271 @@
         }
 
         /* --- Container --- */
-        .section {
-            padding: 100px 20px;
-            max-width: 1000px;
+        .container {
+            max-width: 1100px;
             margin: 0 auto;
+            padding: 100px 20px;
         }
 
-        .title {
+        .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 50px;
+            font-size: 2.2rem;
+            margin-bottom: 60px;
             position: relative;
         }
 
-        .title::after {
+        .section-title::after {
             content: '';
             display: block;
-            width: 50px;
-            height: 3px;
+            width: 60px;
+            height: 4px;
             background: var(--accent-blue);
             margin: 15px auto 0;
-            border-radius: 2px;
+            border-radius: 10px;
         }
 
         /* --- About Me --- */
-        .about-text {
-            max-width: 750px;
+        .about-content {
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
         }
 
-        .about-text p {
-            margin-bottom: 20px;
+        .about-content p {
+            margin-bottom: 25px;
             font-size: 1.1rem;
-            color: var(--text-muted);
+            color: var(--text-light);
         }
 
         /* --- Projects --- */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-img {
-            width: 100%;
-            height: 200px;
-            background-color: #eee;
+        .project-list {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            gap: 50px;
+        }
+
+        .project-item {
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-img-container {
+            width: 100%;
+            background-color: #f9f9f9;
+            display: flex;
             justify-content: center;
-            color: #999;
+            align-items: center;
+            padding: 20px;
         }
 
-        .project-content {
-            padding: 25px;
+        .project-img-container img {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            object-fit: contain; /* โชว์ภาพเต็มไม่โดนตัด */
+            border-radius: 15px;
         }
 
-        .project-content h3 {
-            margin-bottom: 10px;
+        .project-info {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .project-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             color: var(--accent-blue);
+        }
+
+        .project-info p {
+            color: var(--text-light);
         }
 
         /* --- Skills --- */
         .skills-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px 50px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px 50px;
         }
 
-        .skill-item {
-            margin-bottom: 15px;
+        .skill-card {
+            margin-bottom: 10px;
         }
 
-        .skill-label {
+        .skill-meta {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
-        .progress-bar {
-            height: 8px;
+        .bar-bg {
+            height: 10px;
             background: #eef2f3;
-            border-radius: 10px;
+            border-radius: 20px;
             overflow: hidden;
         }
 
-        .progress-fill {
+        .bar-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--accent-blue), var(--accent-pink));
-            border-radius: 10px;
+            border-radius: 20px;
         }
 
         /* --- Contact --- */
-        .contact-links {
+        .contact-area {
+            text-align: center;
+        }
+
+        .contact-buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
 
-        .contact-btn {
+        .btn {
             text-decoration: none;
-            padding: 12px 30px;
+            padding: 15px 35px;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            font-size: 1rem;
         }
 
-        .email { background: var(--accent-blue); color: white; }
-        .linkedin { border: 2px solid var(--accent-blue); color: var(--accent-blue); }
-        .instagram { background: var(--bg-pink); color: var(--accent-pink); }
+        .btn-email { background: var(--accent-blue); color: white; }
+        .btn-link { border: 2px solid var(--accent-blue); color: var(--accent-blue); }
+        .btn-ig { background: var(--primary-pink); color: var(--accent-pink); }
 
-        .contact-btn:hover {
-            opacity: 0.8;
-            transform: scale(1.05);
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            opacity: 0.9;
         }
 
         footer {
             text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
-            color: var(--text-muted);
+            padding: 50px 20px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid rgba(0,0,0,0.05);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .skills-grid { grid-template-columns: 1fr; }
             .hero h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+            .project-info { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
     <header class="hero">
-        <div class="profile-container">
+        <div class="profile-wrapper">
             <img src="b784f14e-99a8-4631-ab44-549190a910ba.jpg" alt="Sornsawan Sophapho" class="profile-img">
         </div>
         <h1>Sornsawan Sophapho</h1>
         <p class="tagline">Marketing student passionate about brand storytelling</p>
     </header>
 
-    <section class="section">
-        <h2 class="title">About Me</h2>
-        <div class="about-text">
+    <section class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
             <p>
-                สวัสดีครับ ผมชื่อ <strong>สรสวรรค์ โสภาโพธิ์</strong> ปัจจุบันเป็นนักศึกษาชั้นปีที่ 3 สาขาการจัดการโลจิสติกส์และการคมนาคมขนส่ง 
-                ถึงแม้จะเรียนด้านสายงานระบบขนส่ง แต่ผมมีความหลงใหลอย่างมากในการเล่าเรื่องราวของแบรนด์และการตลาดดิจิทัล
+                สวัสดีครับ ผม <strong>สรสวรรค์ โสภาโพธิ์</strong> นักศึกษาชั้นปีที่ 3 สาขาการจัดการโลจิสติกส์และการคมนาคมขนส่ง ผู้มีความหลงใหลในการเชื่อมโยงโลกของระบบการจัดการเข้ากับพลังของการเล่าเรื่อง (Storytelling)
             </p>
             <p>
-                ผมเชื่อว่า "โลจิสติกส์" คือกระดูกสันหลังที่ทำให้ธุรกิจเดินหน้า แต่ "การเล่าเรื่อง" คือหัวใจที่ทำให้ธุรกิจเข้าไปอยู่ในใจของผู้คน 
-                ผมจึงมุ่งมั่นที่จะนำทักษะการจัดการที่เป็นระบบมาผสมผสานกับความคิดสร้างสรรค์เพื่อสร้างสรรค์แคมเปญที่มีประสิทธิภาพครับ
+                ผมเชื่อว่าหัวใจสำคัญของแบรนด์ที่แข็งแกร่งไม่ได้อยู่ที่เพียงสินค้าที่ยอดเยี่ยม แต่อยู่ที่การส่งต่อคุณค่าและการสร้างอารมณ์ร่วมกับผู้คน ผมจึงมุ่งมั่นที่จะใช้ทักษะด้านโลจิสติกส์มาช่วยเพิ่มประสิทธิภาพ และใช้การตลาดดิจิทัลมาสร้างตัวตนที่น่าจดจำให้กับแบรนด์
             </p>
         </div>
     </section>
 
-    <section class="section" style="background-color: var(--white); max-width: 100%;">
-        <div style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
-            <h2 class="title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">Project Thumbnail 1</div>
-                    <div class="project-content">
+    <section id="projects" style="background-color: var(--white); width: 100%;">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-list">
+                
+                <div class="project-item">
+                    <div class="project-img-container">
+                        <img src="Gemini_Generated_Image_bzljwcbzljwcbzlj.png" alt="Logistics Analysis Project">
+                    </div>
+                    <div class="project-info">
                         <h3>Logistics Analysis</h3>
-                        <p>โปรเจกต์วิเคราะห์โครงสร้างพื้นฐานเพื่อลดต้นทุนการขนส่งในเขตกรุงเทพและปริมณฑล</p>
+                        <p>การวิเคราะห์โครงสร้างพื้นฐานเพื่อลดต้นทุนการขนส่งในเขตกรุงเทพและปริมณฑล ผ่านมุมมองการจัดการเชิงรุก</p>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">Project Thumbnail 2</div>
-                    <div class="project-content">
-                        <h3>Brand Narrative</h3>
-                        <p>การออกแบบ Content Strategy สำหรับธุรกิจท้องถิ่นที่เน้นการสร้าง Emotional Connection</p>
+
+                <div class="project-item">
+                    <div class="project-img-container">
+                        <img src="Gemini_Generated_Image_k9nboek9nboek9nb.png" alt="Brand Narrative Project">
+                    </div>
+                    <div class="project-info">
+                        <h3>Brand Narrative Strategy</h3>
+                        <p>กลยุทธ์การสร้าง Content สำหรับธุรกิจท้องถิ่นที่เน้นการสร้างความผูกพันทางอารมณ์ระหว่างแบรนด์กับลูกค้า</p>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img">Project Thumbnail 3</div>
-                    <div class="project-content">
-                        <h3>SCM & Marketing</h3>
-                        <p>งานวิจัยเชิงวิชาการเกี่ยวกับการบูรณาการระบบ Supply Chain เข้ากับความพึงพอใจของลูกค้า</p>
+
+                <div class="project-item">
+                    <div class="project-img-container">
+                        <img src="Gemini_Generated_Image_fzb4tqfzb4tqfzb4.png" alt="SCM Marketing Research">
+                    </div>
+                    <div class="project-info">
+                        <h3>SCM & Marketing Integration</h3>
+                        <p>งานวิจัยเชิงวิชาการที่ศึกษาความสัมพันธ์ระหว่างระบบ Supply Chain และความพึงพอใจของผู้บริโภคยุคใหม่</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2 class="title">Skills</h2>
+    <section class="container">
+        <h2 class="section-title">Professional Skills</h2>
         <div class="skills-grid">
-            <div class="skill-item">
-                <div class="skill-label"><span>Supply Chain Management</span><span>85%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+            <div class="skill-card">
+                <div class="skill-meta"><span>Supply Chain Management</span><span>85%</span></div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
             </div>
-            <div class="skill-item">
-                <div class="skill-label"><span>Brand Storytelling</span><span>95%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+            <div class="skill-card">
+                <div class="skill-meta"><span>Brand Storytelling</span><span>95%</span></div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 95%;"></div></div>
             </div>
-            <div class="skill-item">
-                <div class="skill-label"><span>Content Marketing</span><span>90%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+            <div class="skill-card">
+                <div class="skill-meta"><span>Content Marketing</span><span>90%</span></div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
             </div>
-            <div class="skill-item">
-                <div class="skill-label"><span>Logistics Optimization</span><span>80%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+            <div class="skill-card">
+                <div class="skill-meta"><span>Logistics Optimization</span><span>80%</span></div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
             </div>
-            <div class="skill-item">
-                <div class="skill-label"><span>Data Analysis</span><span>75%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width: 75%;"></div></div>
+            <div class="skill-card">
+                <div class="skill-meta"><span>Data Analysis</span><span>75%</span></div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 75%;"></div></div>
             </div>
-            <div class="skill-item">
-                <div class="skill-label"><span>Creative Strategy</span><span>88%</span></div>
-                <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+            <div class="skill-card">
+                <div class="skill-meta"><span>Creative Strategy</span><span>88%</span></div>
+                <div class="bar-bg"><div class="bar-fill" style="width: 88%;"></div></div>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2 class="title">Get In Touch</h2>
-        <div class="contact-links">
-            <a href="mailto:sornsawan@email.com" class="contact-btn email">Email Me</a>
-            <a href="#" class="contact-btn linkedin">LinkedIn</a>
-            <a href="#" class="contact-btn instagram">Instagram</a>
+    <section class="container contact-area">
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-buttons">
+            <a href="mailto:sornsawan@email.com" class="btn btn-email">Email Me</a>
+            <a href="#" class="btn btn-link">LinkedIn</a>
+            <a href="#" class="btn btn-ig">Instagram</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Sornsawan Sophapho. All Rights Reserved.</p>
+        <p>&copy; 2026 Sornsawan Sophapho. Designed with minimalist aesthetics.</p>
     </footer>
 
 </body>
