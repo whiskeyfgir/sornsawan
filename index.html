@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sornsawan Sophapho | Personal Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Sornsawan Sophapho | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* --- CSS Variables สำหรับการคุมโทน --- */
         :root {
-            --primary-blue: #e0f2fe;
-            --accent-blue: #0ea5e9;
-            --primary-pink: #fdf2f8;
-            --accent-pink: #db2777;
-            --text-main: #1f2937;
-            --text-sub: #4b5563;
-            --white: #ffffff;
+            --bg-blue: #f0f7ff;
+            --bg-pink: #fff0f5;
+            --accent-blue: #00a8ff;
+            --accent-pink: #ff4d94;
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            --card-shadow: 0 10px 30px rgba(0,0,0,0.05);
             --transition: all 0.3s ease;
         }
 
@@ -27,348 +26,308 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--white);
             color: var(--text-main);
-            line-height: 1.6;
-            scroll-behavior: smooth;
+            background-color: #fff;
+            line-height: 1.7;
         }
 
-        /* Layout Helpers */
+        /* --- Global Layout --- */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 30px;
         }
 
         section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
-        .section-title {
-            font-size: 2rem;
+        h2 {
+            font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 50px;
             font-weight: 600;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
             background: linear-gradient(to right, var(--accent-blue), var(--accent-pink));
-            margin: 10px auto;
-            border-radius: 2px;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Hero Section */
+        /* --- Hero Section --- */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-pink) 100%);
+            background: linear-gradient(135deg, var(--bg-blue) 0%, var(--bg-pink) 100%);
             text-align: center;
         }
 
         .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .profile-placeholder {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background-color: var(--white);
-            margin-bottom: 2rem;
-            border: 4px solid var(--white);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .profile-placeholder img {
             width: 100%;
-            height: 100%;
+        }
+
+        .hero-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            margin-bottom: 30px;
+            border: 8px solid #fff;
+            box-shadow: var(--card-shadow);
             object-fit: cover;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
+            margin-bottom: 10px;
+            letter-spacing: -1px;
         }
 
-        .hero .tagline {
-            font-size: 1.25rem;
+        .hero p {
+            font-size: 1.2rem;
             color: var(--accent-pink);
             font-weight: 400;
-            max-width: 600px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        /* About Section */
+        /* --- About Me --- */
         .about {
-            background-color: var(--white);
+            background-color: #fff;
         }
 
         .about-text {
-            max-width: 750px;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
             font-size: 1.1rem;
             color: var(--text-sub);
         }
 
-        /* Projects Section */
+        .about-text p {
+            margin-bottom: 25px;
+        }
+
+        /* --- Projects --- */
         .projects {
-            background-color: #fafafa;
+            background-color: var(--bg-blue);
         }
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .project-card {
-            background: var(--white);
-            border-radius: 15px;
+            background: #fff;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            box-shadow: var(--card-shadow);
             transition: var(--transition);
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.05);
+            transform: translateY(-10px);
         }
 
-        .project-img {
+        .project-img-placeholder {
             width: 100%;
-            height: 200px;
-            background-color: var(--primary-blue);
+            height: 220px;
+            background: linear-gradient(45deg, #e0eaff, #ffdeeb);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 500;
             color: var(--accent-blue);
+            font-weight: 600;
         }
 
         .project-info {
-            padding: 1.5rem;
+            padding: 25px;
         }
 
         .project-info h3 {
-            margin-bottom: 0.75rem;
+            margin-bottom: 15px;
             color: var(--text-main);
         }
 
-        .project-info p {
-            font-size: 0.95rem;
-            color: var(--text-sub);
-        }
-
-        /* Skills Section */
-        .skills {
-            background-color: var(--white);
-        }
-
+        /* --- Skills --- */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 60px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .skill-item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
         .skill-info {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
         }
 
-        .skill-bar-bg {
-            width: 100%;
+        .skill-bar {
             height: 10px;
-            background-color: #f1f5f9;
-            border-radius: 5px;
+            background: #eee;
+            border-radius: 10px;
             overflow: hidden;
         }
 
-        .skill-bar-fill {
+        .skill-progress {
             height: 100%;
-            border-radius: 5px;
             background: linear-gradient(to right, var(--accent-blue), var(--accent-pink));
+            border-radius: 10px;
         }
 
-        /* Contact Section */
+        /* --- Contact --- */
         .contact {
-            background: linear-gradient(135deg, var(--primary-pink) 0%, var(--primary-blue) 100%);
             text-align: center;
+            background: var(--bg-pink);
         }
 
-        .contact-links {
+        .contact-list {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+            gap: 40px;
+            list-style: none;
+            margin-top: 30px;
         }
 
-        .contact-btn {
+        .contact-list a {
             text-decoration: none;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            background: var(--white);
             color: var(--text-main);
-            font-weight: 500;
+            font-weight: 600;
             transition: var(--transition);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border-bottom: 2px solid transparent;
         }
 
-        .contact-btn:hover {
-            background: var(--accent-pink);
-            color: var(--white);
-            transform: scale(1.05);
+        .contact-list a:hover {
+            color: var(--accent-pink);
+            border-bottom: 2px solid var(--accent-pink);
         }
 
         footer {
-            padding: 2rem 0;
             text-align: center;
-            font-size: 0.9rem;
+            padding: 50px 0;
+            font-size: 0.8rem;
             color: var(--text-sub);
-            border-top: 1px solid #f1f1f1;
+            background-color: var(--bg-pink);
         }
 
-        /* Responsive */
+        /* --- Responsive --- */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2.5rem; }
             .skills-grid { grid-template-columns: 1fr; }
+            .contact-list { flex-direction: column; gap: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <div class="hero-content">
-            <div class="profile-placeholder">
-                <img src="https://via.placeholder.com/180/e0f2fe/db2777?text=Sornsawan" alt="Sornsawan Sophapho">
-            </div>
+    <section class="hero">
+        <div class="container hero-content">
+            <img src="https://via.placeholder.com/220" alt="Sornsawan Sophapho" class="hero-img">
             <h1>Sornsawan Sophapho</h1>
-            <p class="tagline">Marketing student passionate about brand storytelling</p>
-        </div>
-    </header>
-
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-text">
-                <p>
-                    สวัสดีค่ะ! ดิฉันเป็นนักศึกษาชั้นปีที่ 3 สาขาการจัดการโลจิสติกส์และการคมนาคมขนส่ง 
-                    ถึงแม้พื้นฐานการเรียนจะเน้นไปที่ระบบการจัดการและการขนส่ง แต่ดิฉันมีความหลงใหลอย่างมากในโลกของการตลาดดิจิทัลและการสร้างคุณค่าให้กับแบรนด์ผ่านการเล่าเรื่อง (Brand Storytelling)
-                </p>
-                <p>
-                    ดิฉันเชื่อว่าโลจิสติกส์ไม่ใช่แค่เรื่องการย้ายสินค้า แต่คือการส่งมอบคุณค่าและประสบการณ์ที่ดีที่สุดถึงมือลูกค้า 
-                    ดิฉันพยายามประยุกต์ใช้ความเข้าใจในห่วงโซ่อุปทาน (Supply Chain) เข้ากับกลยุทธ์การตลาด เพื่อสร้างมุมมองใหม่ๆ ที่ตอบโจทย์ธุรกิจในยุคปัจจุบัน
-                </p>
-            </div>
+            <p>Marketing student passionate about brand storytelling</p>
         </div>
     </section>
 
-    <section id="projects" class="projects">
+    <section class="container about">
+        <h2>About Me</h2>
+        <div class="about-text">
+            <p>
+                สวัสดีค่ะ ฉัน <strong>สรศวรรย์ โสภาโพธิ์</strong> นักศึกษาชั้นปีที่ 3 สาขาการจัดการโลจิสติกส์และการคมนาคมขนส่ง 
+                ที่มีความสนใจอย่างแรงกล้าในการผสานโลกของ "การจัดการประสิทธิภาพ" เข้ากับ "ศิลปะการเล่าเรื่องทางการตลาด"
+            </p>
+            <p>
+                ด้วยพื้นฐานด้านโลจิสติกส์ ทำให้ฉันมองเห็นภาพรวมของซัพพลายเชนที่มั่นคง 
+                และเชื่อว่าการตลาดที่มีพลังจะช่วยเติมเต็มให้ธุรกิจสมบูรณ์แบบ ผ่านการสื่อสารที่จริงใจและเข้าถึงหัวใจผู้บริโภค
+            </p>
+        </div>
+    </section>
+
+    <section class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2>Selected Work</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <div class="project-img">Project Concept A</div>
+                    <div class="project-img-placeholder">LOGISTICS STRATEGY</div>
                     <div class="project-info">
-                        <h3>Logistics Content Strategy</h3>
-                        <p>การออกแบบคอนเทนต์เพื่อให้ความรู้ด้านโลจิสติกส์ผ่านการเล่าเรื่องที่เข้าใจง่ายบน Social Media เพื่อสร้าง Brand Awareness</p>
+                        <h3>Optimization Plan</h3>
+                        <p>โปรเจกต์วิเคราะห์การลดระยะเวลาการขนส่งสินค้าเกษตรเพื่อรักษาคุณภาพสินค้าให้ดีที่สุด</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-img">Project Concept B</div>
+                    <div class="project-img-placeholder">BRAND STORYTELLING</div>
                     <div class="project-info">
-                        <h3>Consumer Insights Analysis</h3>
-                        <p>โปรเจกต์วิเคราะห์พฤติกรรมผู้ซื้อสินค้าออนไลน์ที่มีผลต่อความคาดหวังในระบบการขนส่งสินค้า (Last-mile delivery)</p>
+                        <h3>Local Brand Re-Design</h3>
+                        <p>การสร้างตัวตนใหม่ให้กับแบรนด์สินค้าชุมชนผ่าน Content Marketing ที่เน้นอารมณ์ความรู้สึก</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-img">Project Concept C</div>
+                    <div class="project-img-placeholder">MARKETING RESEARCH</div>
                     <div class="project-info">
-                        <h3>Brand Identity Design</h3>
-                        <p>การออกแบบอัตลักษณ์แบรนด์ให้กับโมเดลธุรกิจสตาร์ทอัพด้านขนส่งที่เน้นความเป็นมิตรต่อสิ่งแวดล้อม</p>
+                        <h3>Consumer Behavior</h3>
+                        <p>งานวิจัยพฤติกรรมการตัดสินใจเลือกซื้อสินค้าผ่านช่องทางออนไลน์ของกลุ่ม Gen Z ในปี 2026</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <div class="skills-grid">
-                <div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Brand Storytelling</span><span>90%</span></div>
-                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 90%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Logistics Management</span><span>85%</span></div>
-                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 85%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Supply Chain Analysis</span><span>80%</span></div>
-                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 80%;"></div></div>
-                    </div>
-                </div>
-                <div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Content Marketing</span><span>88%</span></div>
-                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 88%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Consumer Psychology</span><span>75%</span></div>
-                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 75%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Communication</span><span>92%</span></div>
-                        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width: 92%;"></div></div>
-                    </div>
-                </div>
+    <section class="container">
+        <h2>Professional Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <div class="skill-info"><span>Logistics Management</span><span>85%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>Brand Storytelling</span><span>90%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>Digital Marketing</span><span>80%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 80%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>Supply Chain Analysis</span><span>75%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>Public Speaking</span><span>88%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-info"><span>Creative Content</span><span>92%</span></div>
+                <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section class="contact">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-links">
-                <a href="mailto:sornsawan.s@example.com" class="contact-btn">Email Me</a>
-                <a href="https://linkedin.com/in/sornsawan-sophapho" class="contact-btn" target="_blank">LinkedIn</a>
-                <a href="https://instagram.com/sornsawan" class="contact-btn" target="_blank">Instagram</a>
-            </div>
+            <h2>Let's Connect</h2>
+            <p>ยินดีที่ได้รู้จักและพร้อมร่วมงานกับทุกความท้าทายใหม่ๆ ค่ะ</p>
+            <ul class="contact-list">
+                <li><a href="mailto:sornsawan.s@email.com">Email</a></li>
+                <li><a href="https://linkedin.com/in/sornsawan-sophapho" target="_blank">LinkedIn</a></li>
+                <li><a href="https://instagram.com/sornsawan" target="_blank">Instagram</a></li>
+            </ul>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Sornsawan Sophapho. Designed with Poppins & Minimalist Spirit.</p>
+            <p>&copy; 2026 Sornsawan Sophapho. All Rights Reserved.</p>
+            <p style="margin-top: 10px; opacity: 0.6;">Designed by Sornsawan - Logistics x Marketing</p>
         </div>
     </footer>
 
 </body>
-</html>
 </html>
